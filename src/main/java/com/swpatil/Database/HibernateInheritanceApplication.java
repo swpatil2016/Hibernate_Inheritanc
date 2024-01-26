@@ -20,40 +20,40 @@ public class HibernateInheritanceApplication implements CommandLineRunner{
 		SpringApplication.run(HibernateInheritanceApplication.class, args);
 	}
 
-	TaRepository taRepository;
-	UserRepository userRepository;
-
-	public HibernateInheritanceApplication(TaRepository taRepository, UserRepository userRepository) {
-		this.taRepository = taRepository;
-		this.userRepository = userRepository;
-	}
+//	TaRepository taRepository;
+//	UserRepository userRepository;
+//
+//	public HibernateInheritanceApplication(TaRepository taRepository, UserRepository userRepository) {
+//		this.taRepository = taRepository;
+//		this.userRepository = userRepository;
+//	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		TA ta = new TA();
-		ta.setEmail("ta@gami.com");
-		ta.setId(45L);
-		ta.setName("Prabhas");
-		ta.setEndTime("12.00");
-		ta.setStartTime("1.00");
-
-		taRepository.save(ta);
-
-		User user= new User();
-		user.setId(30L);
-		user.setEmail("user@gamil.com");
-		user.setName("user");
-
-		userRepository.save(user);
-
-
-		// When we use findAll() on Table_Per_Class database then it will fetch
-		// data from all table of TPC.
-		List<User> users = userRepository.findAll();
-
-		users.forEach(user1 -> {
-			System.out.println(user1.getName());
-		});
+//		TA ta = new TA();
+//		ta.setEmail("ta@gami.com");
+//		ta.setId(45L);
+//		ta.setName("Prabhas");
+//		ta.setEndTime("12.00");
+//		ta.setStartTime("1.00");
+//
+//		taRepository.save(ta);
+//
+//		User user= new User();
+//		user.setId(30L);
+//		user.setEmail("user@gamil.com");
+//		user.setName("user");
+//
+//		userRepository.save(user);
+//
+//
+//		// When we use findAll() on Table_Per_Class database then it will fetch
+//		// data from all table of TPC.
+//		List<User> users = userRepository.findAll();
+//
+//		users.forEach(user1 -> {
+//			System.out.println(user1.getName());
+//		});
 	}
 }
 
