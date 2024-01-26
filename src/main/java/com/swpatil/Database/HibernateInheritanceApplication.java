@@ -9,26 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HibernateInheritanceApplication implements CommandLineRunner{
+public class HibernateInheritanceApplication{
 	public static void main(String[] args) {
 		SpringApplication.run(HibernateInheritanceApplication.class, args);
-	}
-
-	StudentRepository studentRepository;
-
-	public HibernateInheritanceApplication(StudentRepository studentRepository) {
-		this.studentRepository = studentRepository;
-	}
-
-	@Override
-	public void run(String... args) throws Exception {
-		Student student = new Student();
-		student.setBatch("oct11");
-		student.setPsp(24.3);
-		student.setId(40L);
-		student.setName("Parth");
-		student.setEmail("Parth@gmail.com");
-		studentRepository.save(student);
-
 	}
 }
