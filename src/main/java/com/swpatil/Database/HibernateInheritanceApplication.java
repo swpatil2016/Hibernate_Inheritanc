@@ -28,5 +28,7 @@ public class HibernateInheritanceApplication implements CommandLineRunner{
 		student.setId(40L);
 		student.setName("Parth");
 		student.setEmail("Parth@gmail.com");
+		studentRepository.save(student);
+
 	}
 }
