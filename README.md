@@ -6,3 +6,5 @@ Readme2.md) -> Run the App -> Table created inside database.
 --------------------------------------------------------------------------
 -> In time of join Table inheritance the extra column add in all childClass of user as foreign 
 key.
+
+-> We can rename foreign key column with the help of @@PrimaryKeyJoinColumn
