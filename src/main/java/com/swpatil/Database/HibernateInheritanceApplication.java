@@ -12,6 +12,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+
 @SpringBootApplication
 public class HibernateInheritanceApplication implements CommandLineRunner{
 	public static void main(String[] args) {
@@ -43,6 +45,15 @@ public class HibernateInheritanceApplication implements CommandLineRunner{
 		user.setName("user");
 
 		userRepository.save(user);
+
+
+		// When we use findAll() on Table_Per_Class database then it will fetch
+		// data from all table of TPC.
+		List<User> users = userRepository.findAll();
+
+		users.forEach(user1 -> {
+			System.out.println(user1.getName());
+		});
 	}
 }
 
