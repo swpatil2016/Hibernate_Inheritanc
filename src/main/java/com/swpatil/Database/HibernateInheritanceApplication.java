@@ -1,5 +1,7 @@
 package com.swpatil.Database;
 
+import com.swpatil.Database.Inheritance.SingleTable.Student;
+import com.swpatil.Database.Inheritance.SingleTable.StudentRepository;
 import com.swpatil.Database.Inheritance.SuperClass.Mentor;
 import com.swpatil.Database.Inheritance.SuperClass.MentorRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -7,25 +9,24 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HibernateInheritanceApplication implements CommandLineRunner {
+public class HibernateInheritanceApplication implements CommandLineRunner{
 	public static void main(String[] args) {
 		SpringApplication.run(HibernateInheritanceApplication.class, args);
 	}
 
-	MentorRepository mentorRepository;
+	StudentRepository studentRepository;
 
-	public HibernateInheritanceApplication(MentorRepository mentorRepository) {
-		this.mentorRepository = mentorRepository;
+	public HibernateInheritanceApplication(StudentRepository studentRepository) {
+		this.studentRepository = studentRepository;
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		Mentor mentor = new Mentor();
-		mentor.setEmail("Mentor@gmail.com");
-		mentor.setId(20L);
-		mentor.setName("Praj");
-		mentor.setSalary(400000L);
-		mentorRepository.save(mentor);
+		Student student = new Student();
+		student.setBatch("oct11");
+		student.setPsp(24.3);
+		student.setId(40L);
+		student.setName("Parth");
+		student.setEmail("Parth@gmail.com");
 	}
 }
